@@ -1,0 +1,113 @@
+﻿@model Kongre_Online_Mini.MVC.Models.Uye
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Uye</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyisim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyisim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonMobil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonMobil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonSabit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonSabit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumYeri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumYeri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.il.ilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.il.ilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mahal.MahalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mahal.MahalAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ulke.UlkeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulke.UlkeAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

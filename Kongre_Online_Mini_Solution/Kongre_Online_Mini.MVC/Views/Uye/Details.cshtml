@@ -1,0 +1,107 @@
+﻿@model Kongre_Online_Mini.MVC.Models.Uye
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Uye</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Soyisim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Soyisim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonMobil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonMobil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TelefonSabit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TelefonSabit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adres)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adres)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumYeri)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DogumYeri)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.il.ilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.il.ilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mahal.MahalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mahal.MahalAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ulke.UlkeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ulke.UlkeAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UyeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,67 @@
+﻿@model Kongre_Online_Mini.MVC.Models.Secim
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Secim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Konu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Konu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mahal.MahalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mahal.MahalAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Oturum.Konu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Oturum.Konu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SecimId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

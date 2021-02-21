@@ -1,0 +1,27 @@
+﻿@model Kongre_Online_Mini.MVC.Models.Ulke
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ulke</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UlkeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UlkeAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UlkeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

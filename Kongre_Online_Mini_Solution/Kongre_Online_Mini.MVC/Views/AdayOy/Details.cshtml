@@ -1,0 +1,59 @@
+﻿@model Kongre_Online_Mini.MVC.Models.AdayOy
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AdayOy</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aday.Metin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aday.Metin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OyTuru.OyTuruAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OyTuru.OyTuruAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uye.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uye.isim)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdayOyId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

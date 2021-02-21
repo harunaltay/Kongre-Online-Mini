@@ -1,0 +1,1679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KongreOnlineMiniDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aday">
+          <Key>
+            <PropertyRef Name="AdayId" />
+          </Key>
+          <Property Name="AdayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SecimId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdayOy">
+          <Key>
+            <PropertyRef Name="AdayOyId" />
+          </Key>
+          <Property Name="AdayOyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdayId" Type="int" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OyTuruId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AdayYorum">
+          <Key>
+            <PropertyRef Name="AdayYorumId" />
+          </Key>
+          <Property Name="AdayYorumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdayId" Type="int" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+          <Property Name="YorumTuruId" Type="int" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="PasswordFormat" Type="int" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+          <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+          <Property Name="IsApproved" Type="bit" Nullable="false" />
+          <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+          <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+          <Property Name="Comment" Type="ntext" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+          <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+          <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+          <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aspnet_UsersInRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeId" />
+          </Key>
+          <Property Name="BolgeId" Type="int" Nullable="false" />
+          <Property Name="BolgeAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ilId" />
+          </Key>
+          <Property Name="ilId" Type="int" Nullable="false" />
+          <Property Name="ilAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="BolgeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mahal">
+          <Key>
+            <PropertyRef Name="MahalId" />
+          </Key>
+          <Property Name="MahalId" Type="int" Nullable="false" />
+          <Property Name="MahalAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ilId" Type="int" Nullable="false" />
+          <Property Name="BolgeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Oturum">
+          <Key>
+            <PropertyRef Name="OturumId" />
+          </Key>
+          <Property Name="OturumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MahalId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" />
+          <Property Name="Saat" Type="time" Precision="7" />
+          <Property Name="Konu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" />
+        </EntityType>
+        <EntityType Name="OyTuru">
+          <Key>
+            <PropertyRef Name="OyTuruId" />
+          </Key>
+          <Property Name="OyTuruId" Type="int" Nullable="false" />
+          <Property Name="OyTuruAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Secim">
+          <Key>
+            <PropertyRef Name="SecimId" />
+          </Key>
+          <Property Name="SecimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MahalId" Type="int" Nullable="false" />
+          <Property Name="OturumId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+          <Property Name="Konu" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teklif">
+          <Key>
+            <PropertyRef Name="TeklifId" />
+          </Key>
+          <Property Name="TeklifId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OturumId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeklifOy">
+          <Key>
+            <PropertyRef Name="TeklifOyId" />
+          </Key>
+          <Property Name="TeklifOyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeklifId" Type="int" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OyTuruId" Type="int" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeklifYorum">
+          <Key>
+            <PropertyRef Name="TeklifYorumId" />
+          </Key>
+          <Property Name="TeklifYorumId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeklifId" Type="int" Nullable="false" />
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Tarih" Type="date" Nullable="false" />
+          <Property Name="Saat" Type="time" Precision="0" Nullable="false" />
+          <Property Name="YorumTuruId" Type="int" Nullable="false" />
+          <Property Name="Metin" Type="nvarchar" MaxLength="1024" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ulke">
+          <Key>
+            <PropertyRef Name="UlkeId" />
+          </Key>
+          <Property Name="UlkeId" Type="int" Nullable="false" />
+          <Property Name="UlkeAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="UyeId" />
+          </Key>
+          <Property Name="UyeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MahalId" Type="int" Nullable="false" />
+          <Property Name="isim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Soyisim" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TelefonMobil" Type="nvarchar" MaxLength="50" />
+          <Property Name="TelefonSabit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adres" Type="nvarchar" MaxLength="100" />
+          <Property Name="ilId" Type="int" Nullable="false" />
+          <Property Name="UlkeId" Type="int" Nullable="false" />
+          <Property Name="DogumTarihi" Type="date" />
+          <Property Name="DogumYeri" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="YorumTuru">
+          <Key>
+            <PropertyRef Name="YorumTuruId" />
+          </Key>
+          <Property Name="YorumTuruId" Type="int" Nullable="false" />
+          <Property Name="YorumTuruAdi" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__25518C17">
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__RoleI__47A6A41B">
+          <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__aspnet_Us__UserI__46B27FE2">
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+          <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_UsersInRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aday_Secim">
+          <End Role="Secim" Type="Self.Secim" Multiplicity="1" />
+          <End Role="Aday" Type="Self.Aday" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Secim">
+              <PropertyRef Name="SecimId" />
+            </Principal>
+            <Dependent Role="Aday">
+              <PropertyRef Name="SecimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aday_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="Aday" Type="Self.Aday" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Aday">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_Aday">
+          <End Role="Aday" Type="Self.Aday" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aday">
+              <PropertyRef Name="AdayId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="AdayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_OyTuru">
+          <End Role="OyTuru" Type="Self.OyTuru" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OyTuru">
+              <PropertyRef Name="OyTuruId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="OyTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_Aday">
+          <End Role="Aday" Type="Self.Aday" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aday">
+              <PropertyRef Name="AdayId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="AdayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_YorumTuru">
+          <End Role="YorumTuru" Type="Self.YorumTuru" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YorumTuru">
+              <PropertyRef Name="YorumTuruId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="YorumTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_il_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="1" />
+          <End Role="il" Type="Self.il" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeId" />
+            </Principal>
+            <Dependent Role="il">
+              <PropertyRef Name="BolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahal_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="1" />
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeId" />
+            </Principal>
+            <Dependent Role="Mahal">
+              <PropertyRef Name="BolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahal_il">
+          <End Role="il" Type="Self.il" Multiplicity="1" />
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilId" />
+            </Principal>
+            <Dependent Role="Mahal">
+              <PropertyRef Name="ilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oturum_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Oturum">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secim_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Secim" Type="Self.Secim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Secim">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secim_Oturum">
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="1" />
+          <End Role="Secim" Type="Self.Secim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oturum">
+              <PropertyRef Name="OturumId" />
+            </Principal>
+            <Dependent Role="Secim">
+              <PropertyRef Name="OturumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teklif_Oturum">
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="1" />
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oturum">
+              <PropertyRef Name="OturumId" />
+            </Principal>
+            <Dependent Role="Teklif">
+              <PropertyRef Name="OturumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teklif_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Teklif">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_OyTuru">
+          <End Role="OyTuru" Type="Self.OyTuru" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OyTuru">
+              <PropertyRef Name="OyTuruId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="OyTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_Teklif">
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teklif">
+              <PropertyRef Name="TeklifId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="TeklifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_Teklif">
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teklif">
+              <PropertyRef Name="TeklifId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="TeklifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_YorumTuru">
+          <End Role="YorumTuru" Type="Self.YorumTuru" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YorumTuru">
+              <PropertyRef Name="YorumTuruId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="YorumTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_aspnet_Users">
+          <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_il">
+          <End Role="il" Type="Self.il" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="ilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_Ulke">
+          <End Role="Ulke" Type="Self.Ulke" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ulke">
+              <PropertyRef Name="UlkeId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="UlkeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KongreOnlineMiniDBModelStoreContainer">
+          <EntitySet Name="Aday" EntityType="Self.Aday" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdayOy" EntityType="Self.AdayOy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AdayYorum" EntityType="Self.AdayYorum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Bolge" EntityType="Self.Bolge" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="il" EntityType="Self.il" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mahal" EntityType="Self.Mahal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oturum" EntityType="Self.Oturum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OyTuru" EntityType="Self.OyTuru" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Secim" EntityType="Self.Secim" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teklif" EntityType="Self.Teklif" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeklifOy" EntityType="Self.TeklifOy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeklifYorum" EntityType="Self.TeklifYorum" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ulke" EntityType="Self.Ulke" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uye" EntityType="Self.Uye" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YorumTuru" EntityType="Self.YorumTuru" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__25518C17" Association="Self.FK__aspnet_Me__UserI__25518C17">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__RoleI__47A6A41B" Association="Self.FK__aspnet_Us__RoleI__47A6A41B">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK__aspnet_Us__UserI__46B27FE2" Association="Self.FK__aspnet_Us__UserI__46B27FE2">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aday_Secim" Association="Self.FK_Aday_Secim">
+            <End Role="Secim" EntitySet="Secim" />
+            <End Role="Aday" EntitySet="Aday" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aday_Uye" Association="Self.FK_Aday_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="Aday" EntitySet="Aday" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_Aday" Association="Self.FK_AdayOy_Aday">
+            <End Role="Aday" EntitySet="Aday" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_OyTuru" Association="Self.FK_AdayOy_OyTuru">
+            <End Role="OyTuru" EntitySet="OyTuru" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_Uye" Association="Self.FK_AdayOy_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_Aday" Association="Self.FK_AdayYorum_Aday">
+            <End Role="Aday" EntitySet="Aday" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_Uye" Association="Self.FK_AdayYorum_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_YorumTuru" Association="Self.FK_AdayYorum_YorumTuru">
+            <End Role="YorumTuru" EntitySet="YorumTuru" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_il_Bolge" Association="Self.FK_il_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="il" EntitySet="il" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahal_Bolge" Association="Self.FK_Mahal_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Mahal" EntitySet="Mahal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahal_il" Association="Self.FK_Mahal_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="Mahal" EntitySet="Mahal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oturum_Mahal" Association="Self.FK_Oturum_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Oturum" EntitySet="Oturum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secim_Mahal" Association="Self.FK_Secim_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Secim" EntitySet="Secim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secim_Oturum" Association="Self.FK_Secim_Oturum">
+            <End Role="Oturum" EntitySet="Oturum" />
+            <End Role="Secim" EntitySet="Secim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teklif_Oturum" Association="Self.FK_Teklif_Oturum">
+            <End Role="Oturum" EntitySet="Oturum" />
+            <End Role="Teklif" EntitySet="Teklif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teklif_Uye" Association="Self.FK_Teklif_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="Teklif" EntitySet="Teklif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_OyTuru" Association="Self.FK_TeklifOy_OyTuru">
+            <End Role="OyTuru" EntitySet="OyTuru" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_Teklif" Association="Self.FK_TeklifOy_Teklif">
+            <End Role="Teklif" EntitySet="Teklif" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_Uye" Association="Self.FK_TeklifOy_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_Teklif" Association="Self.FK_TeklifYorum_Teklif">
+            <End Role="Teklif" EntitySet="Teklif" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_Uye" Association="Self.FK_TeklifYorum_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_YorumTuru" Association="Self.FK_TeklifYorum_YorumTuru">
+            <End Role="YorumTuru" EntitySet="YorumTuru" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_aspnet_Users" Association="Self.FK_Uye_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_il" Association="Self.FK_Uye_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_Mahal" Association="Self.FK_Uye_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_Ulke" Association="Self.FK_Uye_Ulke">
+            <End Role="Ulke" EntitySet="Ulke" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KongreOnlineMiniDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aday">
+          <Key>
+            <PropertyRef Name="AdayId" />
+          </Key>
+          <Property Name="AdayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="SecimId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Secim" Relationship="Self.FK_Aday_Secim" FromRole="Aday" ToRole="Secim" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_Aday_Uye" FromRole="Aday" ToRole="Uye" />
+          <NavigationProperty Name="AdayOy" Relationship="Self.FK_AdayOy_Aday" FromRole="Aday" ToRole="AdayOy" />
+          <NavigationProperty Name="AdayYorum" Relationship="Self.FK_AdayYorum_Aday" FromRole="Aday" ToRole="AdayYorum" />
+        </EntityType>
+        <EntityType Name="AdayOy">
+          <Key>
+            <PropertyRef Name="AdayOyId" />
+          </Key>
+          <Property Name="AdayOyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdayId" Type="Int32" Nullable="false" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="OyTuruId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Aday" Relationship="Self.FK_AdayOy_Aday" FromRole="AdayOy" ToRole="Aday" />
+          <NavigationProperty Name="OyTuru" Relationship="Self.FK_AdayOy_OyTuru" FromRole="AdayOy" ToRole="OyTuru" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_AdayOy_Uye" FromRole="AdayOy" ToRole="Uye" />
+        </EntityType>
+        <EntityType Name="AdayYorum">
+          <Key>
+            <PropertyRef Name="AdayYorumId" />
+          </Key>
+          <Property Name="AdayYorumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdayId" Type="Int32" Nullable="false" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="YorumTuruId" Type="Int32" Nullable="false" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Aday" Relationship="Self.FK_AdayYorum_Aday" FromRole="AdayYorum" ToRole="Aday" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_AdayYorum_Uye" FromRole="AdayYorum" ToRole="Uye" />
+          <NavigationProperty Name="YorumTuru" Relationship="Self.FK_AdayYorum_YorumTuru" FromRole="AdayYorum" ToRole="YorumTuru" />
+        </EntityType>
+        <EntityType Name="Bolge">
+          <Key>
+            <PropertyRef Name="BolgeId" />
+          </Key>
+          <Property Name="BolgeId" Type="Int32" Nullable="false" />
+          <Property Name="BolgeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="il" Relationship="Self.FK_il_Bolge" FromRole="Bolge" ToRole="il" />
+          <NavigationProperty Name="Mahal" Relationship="Self.FK_Mahal_Bolge" FromRole="Bolge" ToRole="Mahal" />
+        </EntityType>
+        <EntityType Name="il">
+          <Key>
+            <PropertyRef Name="ilId" />
+          </Key>
+          <Property Name="ilId" Type="Int32" Nullable="false" />
+          <Property Name="ilAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="BolgeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bolge" Relationship="Self.FK_il_Bolge" FromRole="il" ToRole="Bolge" />
+          <NavigationProperty Name="Mahal" Relationship="Self.FK_Mahal_il" FromRole="il" ToRole="Mahal" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_Uye_il" FromRole="il" ToRole="Uye" />
+        </EntityType>
+        <EntityType Name="Mahal">
+          <Key>
+            <PropertyRef Name="MahalId" />
+          </Key>
+          <Property Name="MahalId" Type="Int32" Nullable="false" />
+          <Property Name="MahalAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ilId" Type="Int32" Nullable="false" />
+          <Property Name="BolgeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Bolge" Relationship="Self.FK_Mahal_Bolge" FromRole="Mahal" ToRole="Bolge" />
+          <NavigationProperty Name="il" Relationship="Self.FK_Mahal_il" FromRole="Mahal" ToRole="il" />
+          <NavigationProperty Name="Oturum" Relationship="Self.FK_Oturum_Mahal" FromRole="Mahal" ToRole="Oturum" />
+          <NavigationProperty Name="Secim" Relationship="Self.FK_Secim_Mahal" FromRole="Mahal" ToRole="Secim" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_Uye_Mahal" FromRole="Mahal" ToRole="Uye" />
+        </EntityType>
+        <EntityType Name="Oturum">
+          <Key>
+            <PropertyRef Name="OturumId" />
+          </Key>
+          <Property Name="OturumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MahalId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Saat" Type="Time" Precision="7" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Mahal" Relationship="Self.FK_Oturum_Mahal" FromRole="Oturum" ToRole="Mahal" />
+          <NavigationProperty Name="Secim" Relationship="Self.FK_Secim_Oturum" FromRole="Oturum" ToRole="Secim" />
+          <NavigationProperty Name="Teklif" Relationship="Self.FK_Teklif_Oturum" FromRole="Oturum" ToRole="Teklif" />
+        </EntityType>
+        <EntityType Name="OyTuru">
+          <Key>
+            <PropertyRef Name="OyTuruId" />
+          </Key>
+          <Property Name="OyTuruId" Type="Int32" Nullable="false" />
+          <Property Name="OyTuruAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AdayOy" Relationship="Self.FK_AdayOy_OyTuru" FromRole="OyTuru" ToRole="AdayOy" />
+          <NavigationProperty Name="TeklifOy" Relationship="Self.FK_TeklifOy_OyTuru" FromRole="OyTuru" ToRole="TeklifOy" />
+        </EntityType>
+        <EntityType Name="Secim">
+          <Key>
+            <PropertyRef Name="SecimId" />
+          </Key>
+          <Property Name="SecimId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MahalId" Type="Int32" Nullable="false" />
+          <Property Name="OturumId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="Konu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Aday" Relationship="Self.FK_Aday_Secim" FromRole="Secim" ToRole="Aday" />
+          <NavigationProperty Name="Mahal" Relationship="Self.FK_Secim_Mahal" FromRole="Secim" ToRole="Mahal" />
+          <NavigationProperty Name="Oturum" Relationship="Self.FK_Secim_Oturum" FromRole="Secim" ToRole="Oturum" />
+        </EntityType>
+        <EntityType Name="Teklif">
+          <Key>
+            <PropertyRef Name="TeklifId" />
+          </Key>
+          <Property Name="TeklifId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="OturumId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Oturum" Relationship="Self.FK_Teklif_Oturum" FromRole="Teklif" ToRole="Oturum" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_Teklif_Uye" FromRole="Teklif" ToRole="Uye" />
+          <NavigationProperty Name="TeklifOy" Relationship="Self.FK_TeklifOy_Teklif" FromRole="Teklif" ToRole="TeklifOy" />
+          <NavigationProperty Name="TeklifYorum" Relationship="Self.FK_TeklifYorum_Teklif" FromRole="Teklif" ToRole="TeklifYorum" />
+        </EntityType>
+        <EntityType Name="TeklifOy">
+          <Key>
+            <PropertyRef Name="TeklifOyId" />
+          </Key>
+          <Property Name="TeklifOyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeklifId" Type="Int32" Nullable="false" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="OyTuruId" Type="Int32" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <NavigationProperty Name="OyTuru" Relationship="Self.FK_TeklifOy_OyTuru" FromRole="TeklifOy" ToRole="OyTuru" />
+          <NavigationProperty Name="Teklif" Relationship="Self.FK_TeklifOy_Teklif" FromRole="TeklifOy" ToRole="Teklif" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_TeklifOy_Uye" FromRole="TeklifOy" ToRole="Uye" />
+        </EntityType>
+        <EntityType Name="TeklifYorum">
+          <Key>
+            <PropertyRef Name="TeklifYorumId" />
+          </Key>
+          <Property Name="TeklifYorumId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeklifId" Type="Int32" Nullable="false" />
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="Tarih" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Saat" Type="Time" Nullable="false" Precision="0" />
+          <Property Name="YorumTuruId" Type="Int32" Nullable="false" />
+          <Property Name="Metin" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Teklif" Relationship="Self.FK_TeklifYorum_Teklif" FromRole="TeklifYorum" ToRole="Teklif" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_TeklifYorum_Uye" FromRole="TeklifYorum" ToRole="Uye" />
+          <NavigationProperty Name="YorumTuru" Relationship="Self.FK_TeklifYorum_YorumTuru" FromRole="TeklifYorum" ToRole="YorumTuru" />
+        </EntityType>
+        <EntityType Name="Ulke">
+          <Key>
+            <PropertyRef Name="UlkeId" />
+          </Key>
+          <Property Name="UlkeId" Type="Int32" Nullable="false" />
+          <Property Name="UlkeAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Uye" Relationship="Self.FK_Uye_Ulke" FromRole="Ulke" ToRole="Uye" />
+        </EntityType>
+        <EntityType Name="Uye">
+          <Key>
+            <PropertyRef Name="UyeId" />
+          </Key>
+          <Property Name="UyeId" Type="Guid" Nullable="false" />
+          <Property Name="MahalId" Type="Int32" Nullable="false" />
+          <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Soyisim" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TelefonMobil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TelefonSabit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adres" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ilId" Type="Int32" Nullable="false" />
+          <Property Name="UlkeId" Type="Int32" Nullable="false" />
+          <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+          <Property Name="DogumYeri" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Aday" Relationship="Self.FK_Aday_Uye" FromRole="Uye" ToRole="Aday" />
+          <NavigationProperty Name="AdayOy" Relationship="Self.FK_AdayOy_Uye" FromRole="Uye" ToRole="AdayOy" />
+          <NavigationProperty Name="AdayYorum" Relationship="Self.FK_AdayYorum_Uye" FromRole="Uye" ToRole="AdayYorum" />
+          <NavigationProperty Name="il" Relationship="Self.FK_Uye_il" FromRole="Uye" ToRole="il" />
+          <NavigationProperty Name="Mahal" Relationship="Self.FK_Uye_Mahal" FromRole="Uye" ToRole="Mahal" />
+          <NavigationProperty Name="Teklif" Relationship="Self.FK_Teklif_Uye" FromRole="Uye" ToRole="Teklif" />
+          <NavigationProperty Name="TeklifOy" Relationship="Self.FK_TeklifOy_Uye" FromRole="Uye" ToRole="TeklifOy" />
+          <NavigationProperty Name="TeklifYorum" Relationship="Self.FK_TeklifYorum_Uye" FromRole="Uye" ToRole="TeklifYorum" />
+          <NavigationProperty Name="Ulke" Relationship="Self.FK_Uye_Ulke" FromRole="Uye" ToRole="Ulke" />
+          <NavigationProperty Name="aspnet_Users" Relationship="KongreOnlineMiniDBModel.FK_Uye_aspnet_Users" FromRole="Uye" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="YorumTuru">
+          <Key>
+            <PropertyRef Name="YorumTuruId" />
+          </Key>
+          <Property Name="YorumTuruId" Type="Int32" Nullable="false" />
+          <Property Name="YorumTuruAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="AdayYorum" Relationship="Self.FK_AdayYorum_YorumTuru" FromRole="YorumTuru" ToRole="AdayYorum" />
+          <NavigationProperty Name="TeklifYorum" Relationship="Self.FK_TeklifYorum_YorumTuru" FromRole="YorumTuru" ToRole="TeklifYorum" />
+        </EntityType>
+        <Association Name="FK_Aday_Secim">
+          <End Role="Secim" Type="Self.Secim" Multiplicity="1" />
+          <End Role="Aday" Type="Self.Aday" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Secim">
+              <PropertyRef Name="SecimId" />
+            </Principal>
+            <Dependent Role="Aday">
+              <PropertyRef Name="SecimId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aday_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="Aday" Type="Self.Aday" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Aday">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_Aday">
+          <End Role="Aday" Type="Self.Aday" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aday">
+              <PropertyRef Name="AdayId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="AdayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_Aday">
+          <End Role="Aday" Type="Self.Aday" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aday">
+              <PropertyRef Name="AdayId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="AdayId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_OyTuru">
+          <End Role="OyTuru" Type="Self.OyTuru" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OyTuru">
+              <PropertyRef Name="OyTuruId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="OyTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayOy_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="AdayOy" Type="Self.AdayOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="AdayOy">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AdayYorum_YorumTuru">
+          <End Role="YorumTuru" Type="Self.YorumTuru" Multiplicity="1" />
+          <End Role="AdayYorum" Type="Self.AdayYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YorumTuru">
+              <PropertyRef Name="YorumTuruId" />
+            </Principal>
+            <Dependent Role="AdayYorum">
+              <PropertyRef Name="YorumTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_il_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="1" />
+          <End Role="il" Type="Self.il" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeId" />
+            </Principal>
+            <Dependent Role="il">
+              <PropertyRef Name="BolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahal_Bolge">
+          <End Role="Bolge" Type="Self.Bolge" Multiplicity="1" />
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bolge">
+              <PropertyRef Name="BolgeId" />
+            </Principal>
+            <Dependent Role="Mahal">
+              <PropertyRef Name="BolgeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mahal_il">
+          <End Role="il" Type="Self.il" Multiplicity="1" />
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilId" />
+            </Principal>
+            <Dependent Role="Mahal">
+              <PropertyRef Name="ilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_il">
+          <End Role="il" Type="Self.il" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="il">
+              <PropertyRef Name="ilId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="ilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oturum_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Oturum">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secim_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Secim" Type="Self.Secim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Secim">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_Mahal">
+          <End Role="Mahal" Type="Self.Mahal" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Mahal">
+              <PropertyRef Name="MahalId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="MahalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Secim_Oturum">
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="1" />
+          <End Role="Secim" Type="Self.Secim" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oturum">
+              <PropertyRef Name="OturumId" />
+            </Principal>
+            <Dependent Role="Secim">
+              <PropertyRef Name="OturumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teklif_Oturum">
+          <End Role="Oturum" Type="Self.Oturum" Multiplicity="1" />
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Oturum">
+              <PropertyRef Name="OturumId" />
+            </Principal>
+            <Dependent Role="Teklif">
+              <PropertyRef Name="OturumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_OyTuru">
+          <End Role="OyTuru" Type="Self.OyTuru" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OyTuru">
+              <PropertyRef Name="OyTuruId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="OyTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teklif_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="Teklif">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_Teklif">
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teklif">
+              <PropertyRef Name="TeklifId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="TeklifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_Teklif">
+          <End Role="Teklif" Type="Self.Teklif" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teklif">
+              <PropertyRef Name="TeklifId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="TeklifId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifOy_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="TeklifOy" Type="Self.TeklifOy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="TeklifOy">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_Uye">
+          <End Role="Uye" Type="Self.Uye" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeklifYorum_YorumTuru">
+          <End Role="YorumTuru" Type="Self.YorumTuru" Multiplicity="1" />
+          <End Role="TeklifYorum" Type="Self.TeklifYorum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="YorumTuru">
+              <PropertyRef Name="YorumTuruId" />
+            </Principal>
+            <Dependent Role="TeklifYorum">
+              <PropertyRef Name="YorumTuruId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_Ulke">
+          <End Role="Ulke" Type="Self.Ulke" Multiplicity="1" />
+          <End Role="Uye" Type="Self.Uye" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ulke">
+              <PropertyRef Name="UlkeId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="UlkeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="KongreOnlineMiniDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aday" EntityType="Self.Aday" />
+          <EntitySet Name="AdayOy" EntityType="Self.AdayOy" />
+          <EntitySet Name="AdayYorum" EntityType="Self.AdayYorum" />
+          <EntitySet Name="Bolge" EntityType="Self.Bolge" />
+          <EntitySet Name="il" EntityType="Self.il" />
+          <EntitySet Name="Mahal" EntityType="Self.Mahal" />
+          <EntitySet Name="Oturum" EntityType="Self.Oturum" />
+          <EntitySet Name="OyTuru" EntityType="Self.OyTuru" />
+          <EntitySet Name="Secim" EntityType="Self.Secim" />
+          <EntitySet Name="Teklif" EntityType="Self.Teklif" />
+          <EntitySet Name="TeklifOy" EntityType="Self.TeklifOy" />
+          <EntitySet Name="TeklifYorum" EntityType="Self.TeklifYorum" />
+          <EntitySet Name="Ulke" EntityType="Self.Ulke" />
+          <EntitySet Name="Uye" EntityType="Self.Uye" />
+          <EntitySet Name="YorumTuru" EntityType="Self.YorumTuru" />
+          <AssociationSet Name="FK_Aday_Secim" Association="Self.FK_Aday_Secim">
+            <End Role="Secim" EntitySet="Secim" />
+            <End Role="Aday" EntitySet="Aday" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aday_Uye" Association="Self.FK_Aday_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="Aday" EntitySet="Aday" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_Aday" Association="Self.FK_AdayOy_Aday">
+            <End Role="Aday" EntitySet="Aday" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_Aday" Association="Self.FK_AdayYorum_Aday">
+            <End Role="Aday" EntitySet="Aday" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_OyTuru" Association="Self.FK_AdayOy_OyTuru">
+            <End Role="OyTuru" EntitySet="OyTuru" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayOy_Uye" Association="Self.FK_AdayOy_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="AdayOy" EntitySet="AdayOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_Uye" Association="Self.FK_AdayYorum_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AdayYorum_YorumTuru" Association="Self.FK_AdayYorum_YorumTuru">
+            <End Role="YorumTuru" EntitySet="YorumTuru" />
+            <End Role="AdayYorum" EntitySet="AdayYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_il_Bolge" Association="Self.FK_il_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="il" EntitySet="il" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahal_Bolge" Association="Self.FK_Mahal_Bolge">
+            <End Role="Bolge" EntitySet="Bolge" />
+            <End Role="Mahal" EntitySet="Mahal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mahal_il" Association="Self.FK_Mahal_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="Mahal" EntitySet="Mahal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_il" Association="Self.FK_Uye_il">
+            <End Role="il" EntitySet="il" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oturum_Mahal" Association="Self.FK_Oturum_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Oturum" EntitySet="Oturum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secim_Mahal" Association="Self.FK_Secim_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Secim" EntitySet="Secim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_Mahal" Association="Self.FK_Uye_Mahal">
+            <End Role="Mahal" EntitySet="Mahal" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Secim_Oturum" Association="Self.FK_Secim_Oturum">
+            <End Role="Oturum" EntitySet="Oturum" />
+            <End Role="Secim" EntitySet="Secim" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teklif_Oturum" Association="Self.FK_Teklif_Oturum">
+            <End Role="Oturum" EntitySet="Oturum" />
+            <End Role="Teklif" EntitySet="Teklif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_OyTuru" Association="Self.FK_TeklifOy_OyTuru">
+            <End Role="OyTuru" EntitySet="OyTuru" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teklif_Uye" Association="Self.FK_Teklif_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="Teklif" EntitySet="Teklif" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_Teklif" Association="Self.FK_TeklifOy_Teklif">
+            <End Role="Teklif" EntitySet="Teklif" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_Teklif" Association="Self.FK_TeklifYorum_Teklif">
+            <End Role="Teklif" EntitySet="Teklif" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifOy_Uye" Association="Self.FK_TeklifOy_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="TeklifOy" EntitySet="TeklifOy" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_Uye" Association="Self.FK_TeklifYorum_Uye">
+            <End Role="Uye" EntitySet="Uye" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeklifYorum_YorumTuru" Association="Self.FK_TeklifYorum_YorumTuru">
+            <End Role="YorumTuru" EntitySet="YorumTuru" />
+            <End Role="TeklifYorum" EntitySet="TeklifYorum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_Ulke" Association="Self.FK_Uye_Ulke">
+            <End Role="Ulke" EntitySet="Ulke" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <EntitySet Name="aspnet_Membership" EntityType="KongreOnlineMiniDBModel.aspnet_Membership" />
+          <EntitySet Name="aspnet_Roles" EntityType="KongreOnlineMiniDBModel.aspnet_Roles" />
+          <EntitySet Name="aspnet_Users" EntityType="KongreOnlineMiniDBModel.aspnet_Users" />
+          <AssociationSet Name="FK__aspnet_Me__UserI__25518C17" Association="KongreOnlineMiniDBModel.FK__aspnet_Me__UserI__25518C17">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uye_aspnet_Users" Association="KongreOnlineMiniDBModel.FK_Uye_aspnet_Users">
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+            <End Role="Uye" EntitySet="Uye" />
+          </AssociationSet>
+          <AssociationSet Name="aspnet_UsersInRoles" Association="KongreOnlineMiniDBModel.aspnet_UsersInRoles">
+            <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+            <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="aspnet_Membership">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+          <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+          <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+          <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="KongreOnlineMiniDBModel.FK__aspnet_Me__UserI__25518C17" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="RoleId" Type="Guid" Nullable="false" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="aspnet_Users" Relationship="KongreOnlineMiniDBModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+        </EntityType>
+        <EntityType Name="aspnet_Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+          <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="aspnet_Membership" Relationship="KongreOnlineMiniDBModel.FK__aspnet_Me__UserI__25518C17" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+          <NavigationProperty Name="Uye" Relationship="KongreOnlineMiniDBModel.FK_Uye_aspnet_Users" FromRole="aspnet_Users" ToRole="Uye" />
+          <NavigationProperty Name="aspnet_Roles" Relationship="KongreOnlineMiniDBModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+        </EntityType>
+        <Association Name="FK__aspnet_Me__UserI__25518C17">
+          <End Type="KongreOnlineMiniDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="KongreOnlineMiniDBModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="aspnet_Membership">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uye_aspnet_Users">
+          <End Type="KongreOnlineMiniDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+          <End Type="KongreOnlineMiniDBModel.Uye" Role="Uye" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="aspnet_Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Uye">
+              <PropertyRef Name="UyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="aspnet_UsersInRoles">
+          <End Type="KongreOnlineMiniDBModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+          <End Type="KongreOnlineMiniDBModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KongreOnlineMiniDBModelStoreContainer" CdmEntityContainer="KongreOnlineMiniDBEntities">
+          <EntitySetMapping Name="Aday">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Aday">
+              <MappingFragment StoreEntitySet="Aday">
+                <ScalarProperty Name="AdayId" ColumnName="AdayId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="SecimId" ColumnName="SecimId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdayOy">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.AdayOy">
+              <MappingFragment StoreEntitySet="AdayOy">
+                <ScalarProperty Name="AdayOyId" ColumnName="AdayOyId" />
+                <ScalarProperty Name="AdayId" ColumnName="AdayId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="OyTuruId" ColumnName="OyTuruId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AdayYorum">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.AdayYorum">
+              <MappingFragment StoreEntitySet="AdayYorum">
+                <ScalarProperty Name="AdayYorumId" ColumnName="AdayYorumId" />
+                <ScalarProperty Name="AdayId" ColumnName="AdayId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="YorumTuruId" ColumnName="YorumTuruId" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bolge">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Bolge">
+              <MappingFragment StoreEntitySet="Bolge">
+                <ScalarProperty Name="BolgeId" ColumnName="BolgeId" />
+                <ScalarProperty Name="BolgeAdi" ColumnName="BolgeAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="il">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.il">
+              <MappingFragment StoreEntitySet="il">
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="ilAdi" ColumnName="ilAdi" />
+                <ScalarProperty Name="BolgeId" ColumnName="BolgeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mahal">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Mahal">
+              <MappingFragment StoreEntitySet="Mahal">
+                <ScalarProperty Name="MahalId" ColumnName="MahalId" />
+                <ScalarProperty Name="MahalAdi" ColumnName="MahalAdi" />
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="BolgeId" ColumnName="BolgeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oturum">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Oturum">
+              <MappingFragment StoreEntitySet="Oturum">
+                <ScalarProperty Name="OturumId" ColumnName="OturumId" />
+                <ScalarProperty Name="MahalId" ColumnName="MahalId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OyTuru">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.OyTuru">
+              <MappingFragment StoreEntitySet="OyTuru">
+                <ScalarProperty Name="OyTuruId" ColumnName="OyTuruId" />
+                <ScalarProperty Name="OyTuruAdi" ColumnName="OyTuruAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Secim">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Secim">
+              <MappingFragment StoreEntitySet="Secim">
+                <ScalarProperty Name="SecimId" ColumnName="SecimId" />
+                <ScalarProperty Name="MahalId" ColumnName="MahalId" />
+                <ScalarProperty Name="OturumId" ColumnName="OturumId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Konu" ColumnName="Konu" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teklif">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Teklif">
+              <MappingFragment StoreEntitySet="Teklif">
+                <ScalarProperty Name="TeklifId" ColumnName="TeklifId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="OturumId" ColumnName="OturumId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeklifOy">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.TeklifOy">
+              <MappingFragment StoreEntitySet="TeklifOy">
+                <ScalarProperty Name="TeklifOyId" ColumnName="TeklifOyId" />
+                <ScalarProperty Name="TeklifId" ColumnName="TeklifId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="OyTuruId" ColumnName="OyTuruId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeklifYorum">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.TeklifYorum">
+              <MappingFragment StoreEntitySet="TeklifYorum">
+                <ScalarProperty Name="TeklifYorumId" ColumnName="TeklifYorumId" />
+                <ScalarProperty Name="TeklifId" ColumnName="TeklifId" />
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="Tarih" ColumnName="Tarih" />
+                <ScalarProperty Name="Saat" ColumnName="Saat" />
+                <ScalarProperty Name="YorumTuruId" ColumnName="YorumTuruId" />
+                <ScalarProperty Name="Metin" ColumnName="Metin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ulke">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Ulke">
+              <MappingFragment StoreEntitySet="Ulke">
+                <ScalarProperty Name="UlkeId" ColumnName="UlkeId" />
+                <ScalarProperty Name="UlkeAdi" ColumnName="UlkeAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Uye">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.Uye">
+              <MappingFragment StoreEntitySet="Uye">
+                <ScalarProperty Name="UyeId" ColumnName="UyeId" />
+                <ScalarProperty Name="MahalId" ColumnName="MahalId" />
+                <ScalarProperty Name="isim" ColumnName="isim" />
+                <ScalarProperty Name="Soyisim" ColumnName="Soyisim" />
+                <ScalarProperty Name="TelefonMobil" ColumnName="TelefonMobil" />
+                <ScalarProperty Name="TelefonSabit" ColumnName="TelefonSabit" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Adres" ColumnName="Adres" />
+                <ScalarProperty Name="ilId" ColumnName="ilId" />
+                <ScalarProperty Name="UlkeId" ColumnName="UlkeId" />
+                <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+                <ScalarProperty Name="DogumYeri" ColumnName="DogumYeri" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YorumTuru">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.YorumTuru">
+              <MappingFragment StoreEntitySet="YorumTuru">
+                <ScalarProperty Name="YorumTuruId" ColumnName="YorumTuruId" />
+                <ScalarProperty Name="YorumTuruAdi" ColumnName="YorumTuruAdi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Membership">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.aspnet_Membership">
+              <MappingFragment StoreEntitySet="aspnet_Membership">
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
+                <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
+                <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
+                <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
+                <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
+                <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
+                <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
+                <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
+                <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Roles">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.aspnet_Roles">
+              <MappingFragment StoreEntitySet="aspnet_Roles">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aspnet_Users">
+            <EntityTypeMapping TypeName="KongreOnlineMiniDBModel.aspnet_Users">
+              <MappingFragment StoreEntitySet="aspnet_Users">
+                <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+                <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+                <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+                <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="KongreOnlineMiniDBModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
+            <EndProperty Name="aspnet_Users">
+              <ScalarProperty Name="UserId" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="aspnet_Roles">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

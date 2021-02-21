@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Kongre_Online_Mini.MVC.Models.Mahal>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MahalAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bolge.BolgeAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.il.ilAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MahalAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bolge.BolgeAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.il.ilAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MahalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MahalId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MahalId })
+        </td>
+    </tr>
+}
+
+</table>

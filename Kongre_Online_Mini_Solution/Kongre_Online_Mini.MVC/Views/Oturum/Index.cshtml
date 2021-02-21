@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Kongre_Online_Mini.MVC.Models.Oturum>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Konu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Metin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mahal.MahalAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Konu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Metin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mahal.MahalAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OturumId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OturumId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OturumId })
+        </td>
+    </tr>
+}
+
+</table>

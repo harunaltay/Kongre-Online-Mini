@@ -1,0 +1,35 @@
+﻿@model Kongre_Online_Mini.MVC.Models.il
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>il</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ilAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bolge.BolgeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bolge.BolgeAdi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ilId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

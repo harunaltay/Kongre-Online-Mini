@@ -1,0 +1,73 @@
+﻿@model Kongre_Online_Mini.MVC.Models.TeklifYorum
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TeklifYorum</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tarih)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Saat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Metin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Metin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teklif.Metin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teklif.Metin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Uye.isim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Uye.isim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YorumTuru.YorumTuruAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YorumTuru.YorumTuruAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

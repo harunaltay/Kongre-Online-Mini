@@ -1,0 +1,49 @@
+﻿@model Kongre_Online_Mini.MVC.Models.Mahal
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Mahal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MahalAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MahalAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bolge.BolgeAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bolge.BolgeAdi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.il.ilAdi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.il.ilAdi)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

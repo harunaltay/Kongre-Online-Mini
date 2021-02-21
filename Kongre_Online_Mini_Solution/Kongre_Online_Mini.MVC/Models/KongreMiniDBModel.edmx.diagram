@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bb1063e2f27a44f1be02a0111c251d6e" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Aday" Width="1.5" PointX="12" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.AdayOy" Width="1.5" PointX="17.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.AdayYorum" Width="1.5" PointX="14.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Bolge" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.il" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Mahal" Width="1.5" PointX="5.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Oturum" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.OyTuru" Width="1.5" PointX="15.75" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Secim" Width="1.5" PointX="9.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Teklif" Width="1.5" PointX="12.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.TeklifOy" Width="1.5" PointX="18" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.TeklifYorum" Width="1.5" PointX="15" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Ulke" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.Uye" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.YorumTuru" Width="1.5" PointX="12.75" PointY="16.375" IsExpanded="true" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Aday_Secim" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Aday_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayOy_Aday" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayYorum_Aday" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayOy_OyTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayOy_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayYorum_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_AdayYorum_YorumTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_il_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Mahal_Bolge" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Mahal_il" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Uye_il" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Oturum_Mahal" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Secim_Mahal" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Uye_Mahal" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Secim_Oturum" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Teklif_Oturum" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifOy_OyTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Teklif_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifOy_Teklif" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifYorum_Teklif" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifOy_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifYorum_Uye" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_TeklifYorum_YorumTuru" ManuallyRouted="false" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Uye_Ulke" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.aspnet_Membership" Width="2.75" PointX="0.5" PointY="4.875" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.aspnet_Roles" Width="1.5" PointX="3.5" PointY="7.375" />
+        <EntityTypeShape EntityType="KongreOnlineMiniDBModel.aspnet_Users" Width="1.75" PointX="5.5" PointY="5.625" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK__aspnet_Me__UserI__25518C17" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.FK_Uye_aspnet_Users" />
+        <AssociationConnector Association="KongreOnlineMiniDBModel.aspnet_UsersInRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

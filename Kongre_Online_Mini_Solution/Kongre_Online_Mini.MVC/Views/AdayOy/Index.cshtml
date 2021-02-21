@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Kongre_Online_Mini.MVC.Models.AdayOy>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Tarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Aday.Metin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OyTuru.OyTuruAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Uye.isim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Saat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Aday.Metin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OyTuru.OyTuruAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Uye.isim)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdayOyId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdayOyId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdayOyId })
+        </td>
+    </tr>
+}
+
+</table>

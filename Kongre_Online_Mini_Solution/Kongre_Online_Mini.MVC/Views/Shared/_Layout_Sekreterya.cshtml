@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Üye", "Index", "Uye")</li>
+                    <li>@Html.ActionLink("Oturum", "Index", "Oturum")</li>
+                    <li>@Html.ActionLink("Teklif", "Index", "Teklif")</li>
+                    <li>@Html.ActionLink("TeklifYorum", "Index", "TeklifYorum")</li>
+                    <li>@Html.ActionLink("TeklifOy", "Index", "TeklifOy")</li>
+                    <li>@Html.ActionLink("Secim", "Index", "Secim")</li>
+                    <li>@Html.ActionLink("Aday", "Index", "Aday")</li>
+                    <li>@Html.ActionLink("AdayYorum", "Index", "AdayYorum")</li>
+                    <li>@Html.ActionLink("AdayOy", "Index", "AdayOy")</li>
+
+                    <li>@Html.ActionLink("Mahal", "Index", "Mahal")</li>
+                    <li>@Html.ActionLink("il", "Index", "il")</li>
+                    <li>@Html.ActionLink("Bolge", "Index", "Bolge")</li>
+                    <li>@Html.ActionLink("Ulke", "Index", "Ulke")</li>
+
+                    <li>@Html.ActionLink("YorumTuru", "Index", "YorumTuru")</li>
+                    <li>@Html.ActionLink("OyTuru", "Index", "OyTuru")</li>
+
+                    <li>@Html.ActionLink("ChangePassword", "ChangePassword", "Account")</li>
+                    <li>@Html.ActionLink("LogOff", "LogOff", "Account")</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

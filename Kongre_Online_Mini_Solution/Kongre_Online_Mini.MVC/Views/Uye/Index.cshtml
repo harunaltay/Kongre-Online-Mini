@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Kongre_Online_Mini.MVC.Models.Uye>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout_Sekreterya.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+
+    @*@Html.ActionLink("Create New", "Create")*@
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.isim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Soyisim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonMobil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TelefonSabit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DogumYeri)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.il.ilAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mahal.MahalAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ulke.UlkeAdi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.isim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soyisim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonMobil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TelefonSabit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogumTarihi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DogumYeri)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.il.ilAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mahal.MahalAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ulke.UlkeAdi)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UyeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UyeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UyeId })
+        </td>
+    </tr>
+}
+
+</table>
